@@ -1,0 +1,19 @@
+/**
+ * @param {number} n
+ * @return {string}
+ */
+var convertToTitle = function(n) {
+    var out = "";
+    while(n>0){
+      var num = n%26;
+      if(num==0){
+         num=26;
+      }
+      n=parseInt((n-num)/26);     
+      out = String.fromCharCode(num+65-1) + out; 
+      
+    }
+    return out;
+};
+
+//十进制转26进制

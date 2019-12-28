@@ -1,0 +1,37 @@
+/**
+ * @param {number[]} numbers
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function(numbers, target) {
+    // var a;
+    // var b=numbers.length;
+    // var out=[];
+    // for(a=0;a<b;){
+    //     if(numbers[a]+numbers[b]==target){
+    //         out[0]=a+1;
+    //         out[1]=b+1;
+    //         return out;
+    //     }
+    //     else if(numbers[a]+numbers[b]<target){
+    //         a++;
+    //     }
+    //     else{
+    //         b--;
+    //     }
+    // }
+    // return out;
+    
+    var a = 0;
+    var b = numbers.length-1;
+    while(a<b){
+        if(numbers[a]+numbers[b]<target)
+            a++;
+        else if(numbers[a]+numbers[b]>target)
+            b--;
+        else
+            return [a+1,b+1];
+    }
+    return [];
+    
+};
