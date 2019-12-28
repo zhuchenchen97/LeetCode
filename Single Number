@@ -1,0 +1,15 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+   var num = {};
+   for(var i=0; i<nums.length; i++){
+       if(!num.hasOwnProperty(nums[i]))
+           num[nums[i]]=1;
+       else
+           delete num[nums[i]];
+   }
+   
+   return Object.keys(num)[0];
+};
