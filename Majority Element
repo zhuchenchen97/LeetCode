@@ -1,0 +1,18 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    var element = {};
+    var len = nums.length;
+    for(var i=0; i<nums.length; i++){
+        if(element.hasOwnProperty(nums[i])){
+            element[nums[i]]++;
+            if(element[nums[i]]>nums.length/2)
+                return nums[i];
+        }
+        else
+            element[nums[i]]=1;
+    }
+    return nums[0];
+};
